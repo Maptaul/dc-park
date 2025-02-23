@@ -1,4 +1,4 @@
-// import { data } from "@/constants/keyData";
+import { data } from "@/constants/keyData";
 import { ongoingProjects } from "@/constants/ongoingProjects";
 import NextImage from "@/hooks/NextImage";
 import Footer from "@/layout/footer";
