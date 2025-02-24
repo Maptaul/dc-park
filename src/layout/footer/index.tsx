@@ -40,7 +40,7 @@ export default function Footer() {
                   "গণ্যমান্য ব্যক্তিদের আগমন",
                   "মিডিয়া",
                 ].map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index}> ➡️ {item}</li>
                 ))}
               </ul>
             </div>
@@ -55,7 +55,7 @@ export default function Footer() {
                   "টিকেট কিনুন",
                   "বিধি এবং শর্তাবলী",
                 ].map((item, index) => (
-                  <li key={index}> {item}</li>
+                  <li key={index}> ➡️ {item}</li>
                 ))}
               </ul>
             </div>

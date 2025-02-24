@@ -7,6 +7,9 @@ import styles from "@/styles/Home.module.scss";
 import Head from "next/head";
 import Image from "next/image";
 import { Container } from "react-bootstrap";
+import Lottie from "react-lottie";
+import AwesomeSlider from "react-awesome-slider";
+import "react-awesome-slider/dist/styles.css";
 
 export default function Home() {
   return (
@@ -46,28 +49,32 @@ export default function Home() {
                   অবৈধ দখলদারদের উচ্ছেদের ব্যবস্থা গ্রহণ করেন। জেলা প্রশাসন,
                   চট্টগ্রাম জলারণ্য শোভিত এই স্থানটি সর্বসাধারণের ব্যবহার উপযোগী
                   করতে বিভিন্ন ধরণের স্বল্প ও দীর্ঘ মেয়াদী পরিকল্পনা গ্রহণ
-                  করেন। এ পরিকল্পনার অংশ হিসেবে সাধারণ জনগণ যেন নিরাপদ পরিবেশে
+                  করেন।
+                  <br />
+                  <br />এ পরিকল্পনার অংশ হিসেবে সাধারণ জনগণ যেন নিরাপদ পরিবেশে
                   প্রাকৃতিক সৌন্দর্য উপভোগ, শরীরচর্চা ও অবসর সময় কাটাতে পারেন
                   সেই প্রচেষ্টা গ্রহণ করা হয়। এখানে বাংলাদেশে প্রথমবারের মতো
                   <strong> ফুল উৎসব-২০২৩ </strong> আয়োজন করা হয়; যা ব্যাপকভাবে
                   জনসাধারণের প্রশংসা কুড়িয়েছে। এরই ধারাাহিকতায় ডিসি পার্কে
                   দ্বিতীয়বারের মত বৃহৎ পরিসরে <strong> ফুল উৎসব-২০২৪ </strong>{" "}
-                  এর আয়োজন করা হয়। উক্ত ফুল উৎসবে দেশের বিভিন্ন প্রান্ত থেকে
-                  প্রায় আট লক্ষাধিক দর্শনার্থী ডিসি পার্ক পরিদর্শন করেন ।{" "}
-                  <br></br> <br></br> চট্টগ্রাম জেলার বর্তমান জেলা প্রশাসক জনাব
-                  ফরিদা খানম ডিসি পার্কের সার্বিক উন্নয়নে ইতোমধ্যে বিভিন্ন
-                  উদ্যোগ গ্রহণ করেছেন । এরমধ্যে উল্লেখযোগ্য দৃষ্টিনন্দন গেইট
-                  নির্মাণ, কিডস জোনের উন্নয়ন, ডিসি পার্কের জন্য ওয়েবসাইট
-                  নির্মাণ, অনলাইন টিকেট কেনার ব্যবস্থা, বৃহৎ পরিসরে{" "}
-                  <strong> ফুল উৎসব-২০২৫ </strong> আয়োজন, অবকাঠামোগত
-                  উন্নয়ন।ভবিষ্যতে এই জায়গায় সাইক্লিং ট্র্যাক, ওয়াকওয়ে,
-                  ডেস্টিনেশন ওয়েডিং, ফেরীস হুইল, সমুদ্র পর্যন্ত উডেন ওয়াকওয়ে,
-                  কনভেনশন সেন্টার, রেস্টুরেন্ট, বন্যপ্রাণী সংরক্ষণ কেন্দ্র গড়ে
-                  তোলার পরিকল্পনা রয়েছে।
+                  এর আয়োজন করা হয়।
+                  <br />
+                  <br />
+                  চট্টগ্রাম জেলার বর্তমান জেলা প্রশাসক জনাব ফরিদা খানম ডিসি
+                  পার্কের সার্বিক উন্নয়নে ইতোমধ্যে বিভিন্ন উদ্যোগ গ্রহণ করেছেন।
+                  ভবিষ্যতে এখানে সাইক্লিং ট্র্যাক, ওয়াকওয়ে, ডেস্টিনেশন ওয়েডিং,
+                  ফেরীস হুইল, সমুদ্র পর্যন্ত উডেন ওয়াকওয়ে, কনভেনশন সেন্টার,
+                  রেস্টুরেন্ট, বন্যপ্রাণী সংরক্ষণ কেন্দ্র গড়ে তোলার পরিকল্পনা
+                  রয়েছে।
                 </p>
               </div>
               <div className={styles.image}>
-                <NextImage src={"/images/bannerdc.jpg"} alt={""} />
+                <AwesomeSlider>
+                  <div data-src="/images/bannerdc.jpg" />
+                  <div data-src="/images/image2.jpg" />
+                  <div data-src="/images/image3.jpg" />
+                  <div data-src="/images/image4.jpg" />
+                </AwesomeSlider>
               </div>
             </div>
           </Container>
@@ -75,12 +82,12 @@ export default function Home() {
         <section className={styles.vission} id="vision">
           <Container className={styles.container}>
             <div className={styles.content}>
-              <h2>Our Vision</h2>
+              <h2>আমাদের ভিশন</h2>
               <p>
-                To transform Chattogram into a globally recognized smart and
-                sustainable city that leverages cutting-edge technology,
-                promotes environmental stewardship, and ensures inclusive growth
-                for all its citizens.
+                ডিসি পার্ক চট্টগ্রামকে একটি বিশ্বস্বীকৃত স্মার্ট ও টেকসই পার্কে
+                রূপান্তরিত করা, যা আধুনিক প্রযুক্তির ব্যবহার, <br></br>{" "}
+                পরিবেশবান্ধব উদ্যোগ এবং সকলের জন্য অন্তর্ভুক্তিমূলক উন্নয়ন
+                নিশ্চিত করবে।
               </p>
             </div>
           </Container>
@@ -125,16 +132,6 @@ export default function Home() {
           <Container>
             <h2> ফুল উৎসবের ভিড়িও চিত্র </h2>
             <div className={styles.row}>
-              {/* <div className={styles.videos}>
-                <iframe
-                  src="https://www.youtube.com/embed/ybYb819WuLo"
-                  title="১১ বছর আগের খালেদা জিয়ার ভুমিকা মনে রেখেছেন ড. মুহাম্মদ ইউনূস? ইচ্ছা পূরণ হয়নি শেখ হাসিনার!"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
-              </div> */}
               <div className={styles.videos}>
                 <iframe
                   src="https://www.youtube.com/embed/cDcaih7VHiU?si=ZrArBRqaFILMgVa9"
@@ -208,7 +205,7 @@ export default function Home() {
             </div>
           </Container>
         </section>
-        <section className={styles.getInvolved}>
+        {/* <section className={styles.getInvolved}>
           <Container className={styles.container}>
             <div className={styles.head}>
               <h2>Get Involved</h2>
@@ -242,7 +239,7 @@ export default function Home() {
               </div>
             </div>
           </Container>
-        </section>
+        </section> */}
         <section className={styles.parkGallery}>
           <div className={styles.container}>
             <h2 className={styles.title}>পার্কের কিছু ছবি</h2>
@@ -576,9 +573,29 @@ export default function Home() {
           <div className={styles.container}>
             <div className={styles.head}>
               <h2>আপনার মতামত প্রদান করুন</h2>
+              <Lottie
+                options={{
+                  loop: true,
+                  autoplay: true,
+                  rendererSettings: {
+                    preserveAspectRatio: "xMidYMid slice",
+                  },
+                }}
+                height={100}
+                width={100}
+              />
             </div>
             <div className={styles.row}>
               <div className={styles.formContainer}>
+                <Lottie
+                  options={{
+                    loop: true,
+                    autoplay: true,
+                    rendererSettings: {
+                      preserveAspectRatio: "xMidYMid slice",
+                    },
+                  }}
+                />
                 <form>
                   <input type="text" placeholder="নাম" />
                   <input type="text" placeholder="মোবাইল নম্বর (Optional)" />
