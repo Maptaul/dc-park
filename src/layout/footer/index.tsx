@@ -15,21 +15,18 @@ export default function Footer() {
               <p>
                 বন্দর সংযোগ রোড, ফৌজদারহাট, <br></br> সীতাকুণ্ড, চট্টগ্রাম।
               </p>
-              <p>
-                📞{" "}
-                <a href="tel:+8801745963840" className="hover:text-gray-300">
-                  +880 1745-963840
-                </a>
-              </p>
-              <p>
-                ✉️{" "}
-                <a
-                  href="mailto:info@dcparkctg.com"
-                  className="hover:text-gray-300"
-                >
-                  info@dcparkctg.com
-                </a>
-              </p>
+              <div className={styles.footermap}>
+                {/* Google Map Embed */}
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d50109.518351194776!2d91.7152037!3d22.3896875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30acdb5136d14581%3A0x9434603bf88fd42f!2sDC%20Park%20Chittagong!5e1!3m2!1sen!2sbd!4v1740391554300!5m2!1sen!2sbd"
+                  width="100%"
+                  height="200"
+                  className={styles.iframe}
+                  allowFullScreen
+                  title="DC Park Chittagong Map"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
 
             {/* Quick Links */}
@@ -79,16 +76,19 @@ export default function Footer() {
                 ))}
               </div>
               <div className={styles.visitor}>
-                <h2 className={styles.visitorCount}>532629</h2>
+                <h2 className={styles.visitorCount}>545948</h2>
                 <p>মোট দর্শনার্থী</p>
               </div>
             </div>
           </div>
 
           {/* Copyright & Scroll to Top */}
-          <div className={styles.copyright}>
+          <div className={styles.footerBottom}>
             <p>© DC PARK All Rights Reserved.</p>
-            <p>Jionex IT </p>
+            <p className={styles.designedBy}>
+              {" "}
+              <a href="https://www.jionex.com/">Designed by Jionex IT</a>
+            </p>
             <a
               href="#top"
               className={styles.scrollToTop}

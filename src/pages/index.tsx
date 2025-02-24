@@ -188,7 +188,6 @@ export default function Home() {
             </div>
           </Container>
         </section>
-        
         <section className={styles.ongoingProjects} id="projects">
           <Container className={styles.container}>
             <div className={styles.head}>
