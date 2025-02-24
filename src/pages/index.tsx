@@ -1,4 +1,3 @@
-import { data } from "@/constants/keyData";
 import { ongoingProjects } from "@/constants/ongoingProjects";
 import NextImage from "@/hooks/NextImage";
 import Footer from "@/layout/footer";
@@ -140,20 +139,20 @@ export default function Home() {
                 <iframe
                   src="https://www.youtube.com/embed/cDcaih7VHiU?si=ZrArBRqaFILMgVa9"
                   title="চট্টগ্রামের ডিসি পার্কে ফুল উৎসবে হাজারো দর্শনার্থী"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
                 ></iframe>
               </div>
               <div className={styles.videos}>
                 <iframe
                   src="https://www.youtube.com/embed/_0HXuOMaV4c?si=w_n5xHEo0mPl6tz1"
                   title="ডিসি পার্কে শুরু হচ্ছে ১৩৬ প্রজাতির ফুলের মেলা | Chittagong"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
                 ></iframe>
               </div>
             </div>
@@ -189,7 +188,7 @@ export default function Home() {
             </div>
           </Container>
         </section>
-        ;
+        
         <section className={styles.ongoingProjects} id="projects">
           <Container className={styles.container}>
             <div className={styles.head}>
