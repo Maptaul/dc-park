@@ -1,13 +1,4 @@
-import {
-  FaTrafficLight,
-  FaTree,
-  FaSolarPanel,
-  FaGlobe,
-  FaBuilding,
-  FaRecycle,
-  FaPlug,
-  FaTools,
-} from "react-icons/fa";
+import { FaSolarPanel, FaRecycle, FaPlug, FaTools } from "react-icons/fa";
 
 export const ongoingProjects = [
   // {

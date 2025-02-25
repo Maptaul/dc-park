@@ -10,8 +10,11 @@ import { Container } from "react-bootstrap";
 import Lottie from "react-lottie";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
+import { images } from "@/constants/images";
+import { useState } from "react";
 
 export default function Home() {
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
   return (
     <>
       <Head>
@@ -155,34 +158,65 @@ export default function Home() {
             </div>
           </Container>
         </section>
-        <section className={styles.picture} id="key">
+        <section className={styles.gallery}>
           <Container>
             <h2 className={styles.heading}>পার্কের বিশেষ আকর্ষণ</h2>
-
-            <div className={styles.divGrid}>
-              {[
-                { src: "/images/photo1.jpg", text: "মাসব্যাপী ফুল উৎসব" },
-                { src: "/images/photo2.jpg", text: "রেস্টুরেন্ট" },
-                { src: "/images/photo3.jpg", text: "নৌকা ভ্রমণ ও কায়াকিং" },
-                { src: "/images/photo4.jpg", text: "সানসেট ডিউ পয়েন্ট" },
-                { src: "/images/photo5.jpg", text: "সেলফি কর্নার" },
-                { src: "/images/photo6.jpg", text: "কিডস জোন" },
-                { src: "/images/photo7.jpg", text: "মাছ ধরার ব্যবস্থা" },
-                { src: "/images/photo8.jpg", text: "ফুলের বাগান" },
-              ].map((item, index) => (
-                <div key={index} className="flex flex-col items-center">
-                  <div className={styles.imageContainer}>
-                    <Image
-                      src={item.src}
-                      alt={item.text}
-                      width={180}
-                      height={180}
-                    />
+            <div className={styles.grid}>
+              {images.map((item, index) => (
+                <div
+                  key={index}
+                  className={styles.imageContainer}
+                  onClick={() => setSelectedImage(index)}
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.text}
+                    width={200}
+                    height={200}
+                  />
+                  <div className={styles.caption}>
+                    <p>{item.text}</p>
                   </div>
-                  <p className={styles.caption}>{item.text}</p>
                 </div>
               ))}
             </div>
+            {selectedImage !== null && (
+              <div
+                className={styles.modal}
+                onClick={() => setSelectedImage(null)}
+              >
+                <button
+                  className={styles.prev}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage((prev) =>
+                      prev! > 0 ? prev! - 1 : images.length - 1
+                    );
+                  }}
+                >
+                  ❮
+                </button>
+                <div className={styles.modalContent}>
+                  <Image
+                    src={images[selectedImage].src}
+                    alt={images[selectedImage].text}
+                    width={600}
+                    height={600}
+                  />
+                </div>
+                <button
+                  className={styles.next}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage((prev) =>
+                      prev! < images.length - 1 ? prev! + 1 : 0
+                    );
+                  }}
+                >
+                  ❯
+                </button>
+              </div>
+            )}
           </Container>
         </section>
         <section className={styles.ongoingProjects} id="projects">
