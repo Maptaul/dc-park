@@ -7,11 +7,11 @@ import styles from "@/styles/Home.module.scss";
 import Head from "next/head";
 import Image from "next/image";
 import { Container } from "react-bootstrap";
-import Lottie from "react-lottie";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import { images } from "@/constants/images";
 import { useState } from "react";
+import { FaEnvelope, FaFacebook, FaYoutube } from "react-icons/fa";
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -537,76 +537,73 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className={styles.openingHours}>
+        <section className={styles.connectSection}>
           <div className={styles.container}>
             <div className={styles.grid}>
-              {/* Opening Hours Section */}
+              {/* Contact Information Section */}
               <div className={styles.column}>
-                <h2>খোলা থাকার সময়</h2>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>শুক্রবার</td>
-                      <td>সকাল ৯:০০ - সন্ধ্যা ৮:০০</td>
-                    </tr>
-                    <tr>
-                      <td>শনিবার</td>
-                      <td>সকাল ৯:০০ - সন্ধ্যা ৮:০০</td>
-                    </tr>
-                    <tr>
-                      <td>সোমবার</td>
-                      <td>সকাল ৯:০০ - সন্ধ্যা ৮:০০</td>
-                    </tr>
-                    <tr>
-                      <td>মঙ্গলবার</td>
-                      <td>সকাল ৯:০০ - সন্ধ্যা ৮:০০</td>
-                    </tr>
-                    <tr>
-                      <td>বুধবার</td>
-                      <td>সকাল ৯:০০ - সন্ধ্যা ৮:০০</td>
-                    </tr>
-                    <tr>
-                      <td>বৃহস্পতিবার</td>
-                      <td>সকাল ৯:০০ - সন্ধ্যা ৮:০০</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <h2>আমাদের সাথে যোগাযোগ করুন</h2>
+                <p>
+                  আপনার যদি কোনো প্রশ্ন থাকে বা সহায়তার প্রয়োজন হয়, তাহলে
+                  আমাদের সাথে যোগাযোগ করুন। ইমেইল বা সোশ্যাল মিডিয়ার মাধ্যমে
+                  আমাদের পৌঁছাতে পারেন।
+                </p>
+
+                <div className={styles.contactInfo}>
+                  <div className={styles.contactCard}>
+                    <FaEnvelope className={styles.icon} />
+                    <div>
+                      <h3>ইমেইল</h3>
+                      <p>info@dcparkctg.com</p>
+                    </div>
+                  </div>
+
+                  <div className={styles.contactCard}>
+                    <FaFacebook className={styles.icon} />
+                    <div>
+                      <h3>ফেইসবুক</h3>
+                      <p>dcparkchittagong</p>
+                    </div>
+                  </div>
+
+                  <div className={styles.contactCard}>
+                    <FaYoutube className={styles.icon} />
+                    <div>
+                      <h3>ইউটিউব</h3>
+                      <p>@dcparkchittagong-i5e</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Contact Info Section */}
+              {/* Contact Form Section */}
               <div className={styles.column}>
-                <h2>যোগাযোগের তথ্য</h2>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>ঠিকানা</td>
-                      <td>বন্দর সংযোগ রোড, ফৌজদারহাট, সীতাকুণ্ড, চট্টগ্রাম</td>
-                    </tr>
-                    <tr>
-                      <td>ইমেইল</td>
-                      <td>info@dcparktcg.com</td>
-                    </tr>
-                    <tr>
-                      <td>লোকেশন</td>
-                      <td>
-                        <a href="#">গুগল ম্যাপ</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>মোবাইল</td>
-                      <td>+880 1745-963840</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <h2>যোগাযোগ ফর্ম</h2>
+                <form className={styles.contactForm}>
+                  <div className={styles.inputGroup}>
+                    <div>
+                      <label>পূর্ণ নাম</label>
+                      <input type="text" placeholder="আপনার নাম লিখুন" />
+                    </div>
+                    <div>
+                      <label>ইমেইল</label>
+                      <input type="email" placeholder="আপনার ইমেইল লিখুন" />
+                    </div>
+                  </div>
+
+                  <label>ফোন নাম্বার</label>
+                  <input type="text" placeholder="আপনার ফোন নাম্বার লিখুন" />
+
+                  <label>মেসেজ</label>
+                  <textarea placeholder="আপনার বার্তা লিখুন"></textarea>
+
+                  <button type="submit">পাঠান</button>
+                </form>
               </div>
-            </div>
-            {/* Ticket Price Section */}
-            <div className={styles.ticketPrice}>
-              <p>টিকিট মূল্য: ৫০ /- টাকা জনপ্রতি</p>
             </div>
           </div>
         </section>
-        <section className={styles.getInvolved2}>
+        {/* <section className={styles.getInvolved2}>
           <div className={styles.container}>
             <div className={styles.head}>
               <h2>আপনার মতামত প্রদান করুন</h2>
@@ -643,7 +640,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer />
     </>
