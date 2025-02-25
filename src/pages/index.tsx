@@ -15,6 +15,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
   return (
     <>
       <Head>
@@ -275,104 +276,106 @@ export default function Home() {
           </Container>
         </section> */}
         <section className={styles.parkGallery}>
-          <div className={styles.container}>
-            <h2 className={styles.title}>পার্কের কিছু ছবি</h2>
-            <div className={styles.grid}>
-              <div className={styles.card}>
-                <Image
-                  src="/images/ban.png"
-                  alt="Park Image 1"
-                  width={300}
-                  height={200}
-                  className={styles.image}
-                />
+          <Container>
+            <div className={styles.container}>
+              <h2 className={styles.title}>পার্কের কিছু ছবি</h2>
+              <div className={styles.grid}>
+                <div className={styles.card}>
+                  <Image
+                    src="/images/ban.png"
+                    alt="Park Image 1"
+                    width={300}
+                    height={200}
+                    className={styles.image}
+                  />
+                </div>
+                <div className={styles.card}>
+                  <Image
+                    src="/images/ban1.png"
+                    alt="Park Image 2"
+                    width={300}
+                    height={200}
+                    className={styles.image}
+                  />
+                </div>
+                <div className={styles.card}>
+                  <Image
+                    src="/images/ban2.png"
+                    alt="Park Image 3"
+                    width={300}
+                    height={200}
+                    className={styles.image}
+                  />
+                </div>
+                <div className={styles.card}>
+                  <Image
+                    src="/images/ban3.png"
+                    alt="Park Image 4"
+                    width={300}
+                    height={200}
+                    className={styles.image}
+                  />
+                </div>
+                <div className={styles.card}>
+                  <Image
+                    src="/images/ban4.png"
+                    alt="Park Image 5"
+                    width={300}
+                    height={200}
+                    className={styles.image}
+                  />
+                </div>
+                <div className={styles.card}>
+                  <Image
+                    src="/images/ban5.png"
+                    alt="Park Image 6"
+                    width={300}
+                    height={200}
+                    className={styles.image}
+                  />
+                </div>
+                <div className={styles.card}>
+                  <Image
+                    src="/images/ban6.png"
+                    alt="Park Image 7"
+                    width={300}
+                    height={200}
+                    className={styles.image}
+                  />
+                </div>
+                <div className={styles.card}>
+                  <Image
+                    src="/images/ban7.png"
+                    alt="Park Image 8"
+                    width={300}
+                    height={200}
+                    className={styles.image}
+                  />
+                </div>
+                <div className={styles.card}>
+                  <Image
+                    src="/images/ban8.png"
+                    alt="Park Image 9"
+                    width={300}
+                    height={200}
+                    className={styles.image}
+                  />
+                </div>
+                <div className={styles.card}>
+                  <Image
+                    src="/images/ban1.png"
+                    alt="Park Image 10"
+                    width={300}
+                    height={200}
+                    className={styles.image}
+                  />
+                </div>
               </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/ban1.png"
-                  alt="Park Image 2"
-                  width={300}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/ban2.png"
-                  alt="Park Image 3"
-                  width={300}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/ban3.png"
-                  alt="Park Image 4"
-                  width={300}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/ban4.png"
-                  alt="Park Image 5"
-                  width={300}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/ban5.png"
-                  alt="Park Image 6"
-                  width={300}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/ban6.png"
-                  alt="Park Image 7"
-                  width={300}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/ban7.png"
-                  alt="Park Image 8"
-                  width={300}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/ban8.png"
-                  alt="Park Image 9"
-                  width={300}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/ban1.png"
-                  alt="Park Image 10"
-                  width={300}
-                  height={200}
-                  className={styles.image}
-                />
-              </div>
+              <a href="#" className={styles.loadMore}>
+                আরও ছবি অনুন্ধান করুন
+              </a>
             </div>
-            <a href="#" className={styles.loadMore}>
-              আরও ছবি অনুন্ধান করুন
-            </a>
-          </div>
+          </Container>
         </section>
         <section className={styles.visitorMoments}>
           <div className={styles.container}>

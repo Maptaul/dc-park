@@ -1,0 +1,21 @@
+export const parkPhoto = [
+  { src: "/images/ban.png" },
+  { src: "/images/ban1.png" },
+  { src: "/images/ban2.png" },
+  { src: "/images/ban3.png" },
+  { src: "/images/ban4.png" },
+  { src: "/images/ban5.png" },
+  { src: "/images/ban6.png" },
+  { src: "/images/ban7.png" },
+  { src: "/images/ban8.png" },
+];
+
+//       "/images/ban.png",
+//   "/images/ban1.png",
+//   "/images/ban2.png",
+//   "/images/ban3.png",
+//   "/images/ban4.png",
+//   "/images/ban5.png",
+//   "/images/ban6.png",
+//   "/images/ban7.png",
+//   "/images/ban8.png",
