@@ -10,6 +10,7 @@ import { Container } from "react-bootstrap";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import { images } from "@/constants/images";
+import { parkPhoto } from "@/constants/parkphoto";
 import { useState } from "react";
 import { FaEnvelope, FaFacebook, FaYoutube } from "react-icons/fa";
 
@@ -170,7 +171,7 @@ export default function Home() {
                   onClick={() => setSelectedImage(index)}
                 >
                   <Image
-                    src={item.src}
+                    src={item.src || ""}
                     alt={item.text}
                     width={200}
                     height={200}
@@ -181,7 +182,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            {selectedImage !== null && (
+            {selectedImage !== null && images[selectedImage] && (
               <div
                 className={styles.modal}
                 onClick={() => setSelectedImage(null)}
@@ -199,8 +200,8 @@ export default function Home() {
                 </button>
                 <div className={styles.modalContent}>
                   <Image
-                    src={images[selectedImage].src}
-                    alt={images[selectedImage].text}
+                    src={images[selectedImage]?.src || ""}
+                    alt={images[selectedImage]?.text || "Park Image"}
                     width={600}
                     height={600}
                   />
@@ -275,106 +276,70 @@ export default function Home() {
             </div>
           </Container>
         </section> */}
+
         <section className={styles.parkGallery}>
           <Container>
             <div className={styles.container}>
               <h2 className={styles.title}>পার্কের কিছু ছবি</h2>
               <div className={styles.grid}>
-                <div className={styles.card}>
-                  <Image
-                    src="/images/ban.png"
-                    alt="Park Image 1"
-                    width={300}
-                    height={200}
-                    className={styles.image}
-                  />
-                </div>
-                <div className={styles.card}>
-                  <Image
-                    src="/images/ban1.png"
-                    alt="Park Image 2"
-                    width={300}
-                    height={200}
-                    className={styles.image}
-                  />
-                </div>
-                <div className={styles.card}>
-                  <Image
-                    src="/images/ban2.png"
-                    alt="Park Image 3"
-                    width={300}
-                    height={200}
-                    className={styles.image}
-                  />
-                </div>
-                <div className={styles.card}>
-                  <Image
-                    src="/images/ban3.png"
-                    alt="Park Image 4"
-                    width={300}
-                    height={200}
-                    className={styles.image}
-                  />
-                </div>
-                <div className={styles.card}>
-                  <Image
-                    src="/images/ban4.png"
-                    alt="Park Image 5"
-                    width={300}
-                    height={200}
-                    className={styles.image}
-                  />
-                </div>
-                <div className={styles.card}>
-                  <Image
-                    src="/images/ban5.png"
-                    alt="Park Image 6"
-                    width={300}
-                    height={200}
-                    className={styles.image}
-                  />
-                </div>
-                <div className={styles.card}>
-                  <Image
-                    src="/images/ban6.png"
-                    alt="Park Image 7"
-                    width={300}
-                    height={200}
-                    className={styles.image}
-                  />
-                </div>
-                <div className={styles.card}>
-                  <Image
-                    src="/images/ban7.png"
-                    alt="Park Image 8"
-                    width={300}
-                    height={200}
-                    className={styles.image}
-                  />
-                </div>
-                <div className={styles.card}>
-                  <Image
-                    src="/images/ban8.png"
-                    alt="Park Image 9"
-                    width={300}
-                    height={200}
-                    className={styles.image}
-                  />
-                </div>
-                <div className={styles.card}>
-                  <Image
-                    src="/images/ban1.png"
-                    alt="Park Image 10"
-                    width={300}
-                    height={200}
-                    className={styles.image}
-                  />
-                </div>
+                {parkPhoto.map((item, index) => (
+                  <div
+                    key={index}
+                    className={styles.card}
+                    onClick={() => setSelectedImage(index)}
+                  >
+                    <Image
+                      src={item.src || ""}
+                      alt="Park Image"
+                      width={300}
+                      height={200}
+                      className={styles.image}
+                    />
+                  </div>
+                ))}
               </div>
               <a href="#" className={styles.loadMore}>
-                আরও ছবি অনুন্ধান করুন
+                আরও ছবি দেখুন
               </a>
             </div>
+
+            {selectedImage !== null && parkPhoto[selectedImage] && (
+              <div
+                className={styles.modal}
+                onClick={() => setSelectedImage(null)}
+              >
+                <button
+                  className={styles.prev}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage((prev) =>
+                      prev! > 0 ? prev! - 1 : parkPhoto.length - 1
+                    );
+                  }}
+                >
+                  ❮
+                </button>
+                <div className={styles.modalContent}>
+                  <Image
+                    src={parkPhoto[selectedImage].src || ""}
+                    alt="photo"
+                    width={600}
+                    height={400}
+                  />
+                </div>
+                <button
+                  className={styles.next}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage((prev) =>
+                      prev! < parkPhoto.length - 1 ? prev! + 1 : 0
+                    );
+                  }}
+                >
+                  ❯
+                </button>
+              </div>
+            )}
           </Container>
         </section>
         <section className={styles.visitorMoments}>
