@@ -11,8 +11,16 @@ import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import { images } from "@/constants/images";
 import { parkPhoto } from "@/constants/parkphoto";
+import { visitorImages } from "@/constants/visitorImages";
 import { useState } from "react";
-import { FaEnvelope, FaFacebook, FaYoutube } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaEnvelope,
+  FaFacebook,
+  FaMobile,
+  FaTimes,
+} from "react-icons/fa";
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -348,98 +356,62 @@ export default function Home() {
               পার্কে আগত দর্শনার্থীদের স্মরণীয় কিছু মুহূর্ত
             </h2>
             <div className={styles.grid}>
-              <div className={styles.card}>
-                <Image
-                  src="/images/visitor (1).jpg"
-                  alt="Visitor Image 1"
-                  width={200}
-                  height={150}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/visitor (2).jpg"
-                  alt="Visitor Image 2"
-                  width={200}
-                  height={150}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/visitor (3).jpg"
-                  alt="Visitor Image 3"
-                  width={200}
-                  height={150}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/visitor (4).jpg"
-                  alt="Visitor Image 4"
-                  width={200}
-                  height={150}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/visitor (5).jpg"
-                  alt="Visitor Image 5"
-                  width={200}
-                  height={150}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/visitor (6).jpg"
-                  alt="Visitor Image 6"
-                  width={200}
-                  height={150}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/visitor (7).jpg"
-                  alt="Visitor Image 7"
-                  width={200}
-                  height={150}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/visitor (8).jpg"
-                  alt="Visitor Image 8"
-                  width={200}
-                  height={150}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/visitor (9).jpg"
-                  alt="Visitor Image 9"
-                  width={200}
-                  height={150}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/visitor (10).jpg"
-                  alt="Visitor Image 10"
-                  width={200}
-                  height={150}
-                  className={styles.image}
-                />
-              </div>
+              {visitorImages.map((image, index) => (
+                <div
+                  key={index}
+                  className={styles.card}
+                  onClick={() => setSelectedImage(index)}
+                >
+                  <Image
+                    src={image.src || ""}
+                    alt="Visitor Image"
+                    width={200}
+                    height={150}
+                    className={styles.image}
+                  />
+                </div>
+              ))}
             </div>
           </div>
+
+          {/* Modal Gallery */}
+          {selectedImage !== null && visitorImages[selectedImage] && (
+            <div
+              className={styles.modal}
+              onClick={() => setSelectedImage(null)}
+            >
+              <button
+                className={styles.prev}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImage((prev) =>
+                    prev! > 0 ? prev! - 1 : visitorImages.length - 1
+                  );
+                }}
+              >
+                ❮
+              </button>
+              <div className={styles.modalContent}>
+                <Image
+                  src={visitorImages[selectedImage].src || ""}
+                  alt="photo"
+                  width={600}
+                  height={400}
+                />
+              </div>
+              <button
+                className={styles.next}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImage((prev) =>
+                    prev! < visitorImages.length - 1 ? prev! + 1 : 0
+                  );
+                }}
+              >
+                ❯
+              </button>
+            </div>
+          )}
         </section>
         <section className={styles.newsSection}>
           <div className={styles.container}>
@@ -532,10 +504,10 @@ export default function Home() {
                   </div>
 
                   <div className={styles.contactCard}>
-                    <FaYoutube className={styles.icon} />
+                    <FaMobile className={styles.icon} />
                     <div>
-                      <h3>ইউটিউব</h3>
-                      <p>@dcparkchittagong-i5e</p>
+                      <h3>মোবাইল</h3>
+                      <p>+880 1745-963840</p>
                     </div>
                   </div>
                 </div>
