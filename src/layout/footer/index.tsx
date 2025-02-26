@@ -82,6 +82,9 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Divider before footer bottom */}
+          <hr className={styles.divider} />
+
           {/* Copyright & Scroll to Top */}
           <div className={styles.footerBottom}>
             <p>© DC PARK All Rights Reserved.</p>

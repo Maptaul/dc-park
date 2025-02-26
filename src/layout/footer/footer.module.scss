@@ -112,8 +112,9 @@
     }
 
     .footermap {
-        width: 100%;
+        width: 80%;
         max-width: 600px;
+        
     }
 
     .footerBottom {
@@ -147,4 +148,10 @@
         transition: background 0.3s;
         z-index: 1000;
     }
+    .divider {
+  width: 100%;
+  height: 2px;
+  background: #ddd;
+  margin: 20px 0;
+}
 }
