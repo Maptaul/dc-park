@@ -3,11 +3,9 @@
 @keyframes blink {
   0%, 100% {
     background: $primary;
-    color: #fff;
   }
   50% {
     background: lighten($primary, 20%);
-    color: #000;
   }
 }
 
