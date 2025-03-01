@@ -1,41 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# DC Park - Official Website
 
-## Getting Started
+## 📌 Project Overview
+The **DC Park Website** is a modern, responsive web application designed to provide visitors with essential information about **DC Park**, including location details, historical significance, operational hours, ticketing, and upcoming events. The platform enhances user engagement through interactive elements such as social media integration, Google Maps embedding, and real-time visitor statistics.
 
-First, run the development server:
+## 🚀 Key Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+✅ **Responsive Design:** Optimized for desktops, tablets, and mobile devices using **React, SCSS, and Bootstrap**.  
+✅ **Google Map Integration:** An embedded map for easy navigation to the park's location.  
+✅ **Multilingual Support:** Website content is in **Bengali** for a local audience.  
+✅ **Quick Links & Popular Sections:** Easy navigation to important pages like **history, future plans, and ticket booking**.  
+✅ **Social Media Integration:** Users can connect via **Facebook, Twitter, LinkedIn, and YouTube**.  
+✅ **Real-time Visitor Counter:** Displays the total number of visitors dynamically.  
+✅ **Interactive Footer Section:** Well-structured footer with quick access to essential links, contact details, and a chatbot.  
+✅ **SEO & Accessibility Friendly:** Optimized metadata and accessibility features for a better user experience.  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technology Stack
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- **Frontend:** React.js, Next.js, SCSS (SASS), Tailwind CSS, Bootstrap  
+- **UI Libraries:** React-Icons, React-Bootstrap  
+- **API Integration:** Google Maps API for location services  
+- **Authentication (if applicable):** Firebase (for potential user interactions)  
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 📌 Challenges & Solutions
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### 🔹 Challenge: Ensuring full responsiveness across all screen sizes
+✅ **Solution:** Used **SCSS media queries** and **CSS Grid/Flexbox** to ensure a seamless user experience.  
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🔹 Challenge: Making the footer components (social icons, Google Map, and logo) fully responsive
+✅ **Solution:** Adjusted **alignment using flex properties** and applied **mobile-specific styles** to center elements properly.  
 
-## Learn More
+### 🔹 Challenge: Keeping the UI clean and visually appealing while ensuring performance
+✅ **Solution:** Optimized **image sizes**, minimized **CSS overhead**, and used **lazy loading** where necessary.  
 
-To learn more about Next.js, take a look at the following resources:
+## 🔮 Future Improvements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+🔸 **Multilingual Support:** Expand to include **English and more regional languages**.  
+🔸 **Dark Mode Feature:** Implement a theme switcher for better user experience.  
+🔸 **Event Management System:** Allow visitors to view and register for upcoming events.  
+🔸 **User Feedback System:** Enable reviews and ratings for different attractions.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📜 License
+This project is licensed under the **MIT License** – feel free to modify and use it as needed.  
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
-# smart-city-chattogram
+## 📞 Contact
+For any inquiries or contributions, feel free to reach out.  
+🌐 Website: https://dc-park.vercel.app/
+📧 Email: support@dcpark.com  
