@@ -2,6 +2,7 @@ import Chatbot from "@/modules/chatBot";
 import styles from "./footer.module.scss";
 import { Container } from "react-bootstrap";
 import { FaFacebookF, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -90,7 +91,14 @@ export default function Footer() {
             <p>© DC PARK All Rights Reserved.</p>
             <p className={styles.designedBy}>
               {" "}
-              <a href="https://www.jionex.com/">Designed by Jionex IT</a>
+              <a href="https://www.jionex.com/">
+                <Image
+                  src="/images/jionex_logo.png"
+                  alt="logo"
+                  width={100}
+                  height={70}
+                />
+              </a>
             </p>
             <a
               href="#top"

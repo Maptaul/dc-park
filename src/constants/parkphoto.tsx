@@ -1,4 +1,4 @@
-export const parkPhoto = [
+export const parkphoto = [
   { src: "/images/ban.png" },
   { src: "/images/ban1.png" },
   { src: "/images/ban2.png" },

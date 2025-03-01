@@ -631,6 +631,7 @@
   
     .card {
       background: white;
+      // padding: 5px;
       border-radius: 10px;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
       border: 3px solid #ffcccc;
@@ -639,7 +640,6 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      cursor: pointer;
     }
   
     .card:hover {
@@ -657,77 +657,7 @@
     .card:hover .image {
       transform: scale(1.05);
     }
-  
-    /* Modal Gallery */
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-  
-    .modalContent {
-      position: relative;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    .modalImage {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 10px;
-    }
-  
-    .closeButton {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: transparent;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-      color: #ff6b6b;
-    }
-  
-    .prevButton,
-    .nextButton {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.6);
-      border: none;
-      color: white;
-      font-size: 24px;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 50%;
-    }
-  
-    .prevButton {
-      left: 10px;
-    }
-  
-    .nextButton {
-      right: 10px;
-    }
-  
-    .prevButton:hover,
-    .nextButton:hover {
-      background: rgba(0, 0, 0, 0.8);
-    }
   }
-  
   
   
 
@@ -764,7 +694,7 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      gap: 30px;
       justify-content: center;
       padding: 20px 0;
     }
@@ -793,7 +723,7 @@
       height: 300px;
       border-radius: 10px;
       transition: transform 0.3s ease;
-      object-fit: cover;
+      // object-fit: cover;
       
     }
   
@@ -812,7 +742,7 @@
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    background: #f4f4f4;
+    // background: #f4f4f4;
     // background-size: cover;
     color: black;
     padding: 20px;
@@ -827,7 +757,7 @@
   }
 
   .column {
-    background: rgba(199, 199, 194, 0.863);
+    // background: rgba(199, 199, 194, 0.863);
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
@@ -851,7 +781,7 @@
       .contactCard {
         display: flex;
         align-items: center;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(199, 76, 76, 0.1);
         padding: 10px;
         border-radius: 8px;
         gap: 10px;
@@ -897,7 +827,7 @@
       width: 100%;
       padding: 10px;
       border: 1px solid rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(199, 76, 76, 0.1);
       color: black;
       border-radius: 5px;
     }

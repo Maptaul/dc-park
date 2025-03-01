@@ -10,17 +10,11 @@ import { Container } from "react-bootstrap";
 import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
 import { images } from "@/constants/images";
-import { parkPhoto } from "@/constants/parkphoto";
+import { parkphoto } from "@/constants/parkphoto";
 import { visitorImages } from "@/constants/visitorImages";
+import { newsimage } from "@/constants/newsimage";
 import { useState } from "react";
-import {
-  FaChevronLeft,
-  FaChevronRight,
-  FaEnvelope,
-  FaFacebook,
-  FaMobile,
-  FaTimes,
-} from "react-icons/fa";
+import { FaEnvelope, FaFacebook, FaMobile } from "react-icons/fa";
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -290,7 +284,7 @@ export default function Home() {
             <div className={styles.container}>
               <h2 className={styles.title}>পার্কের কিছু ছবি</h2>
               <div className={styles.grid}>
-                {parkPhoto.map((item, index) => (
+                {parkphoto.map((item, index) => (
                   <div
                     key={index}
                     className={styles.card}
@@ -311,7 +305,7 @@ export default function Home() {
               </a>
             </div>
 
-            {selectedImage !== null && parkPhoto[selectedImage] && (
+            {selectedImage !== null && parkphoto[selectedImage] && (
               <div
                 className={styles.modal}
                 onClick={() => setSelectedImage(null)}
@@ -321,7 +315,7 @@ export default function Home() {
                   onClick={(e) => {
                     e.stopPropagation();
                     setSelectedImage((prev) =>
-                      prev! > 0 ? prev! - 1 : parkPhoto.length - 1
+                      prev! > 0 ? prev! - 1 : parkphoto.length - 1
                     );
                   }}
                 >
@@ -329,7 +323,7 @@ export default function Home() {
                 </button>
                 <div className={styles.modalContent}>
                   <Image
-                    src={parkPhoto[selectedImage].src || ""}
+                    src={parkphoto[selectedImage].src || ""}
                     alt="photo"
                     width={600}
                     height={400}
@@ -340,7 +334,7 @@ export default function Home() {
                   onClick={(e) => {
                     e.stopPropagation();
                     setSelectedImage((prev) =>
-                      prev! < parkPhoto.length - 1 ? prev! + 1 : 0
+                      prev! < parkphoto.length - 1 ? prev! + 1 : 0
                     );
                   }}
                 >
@@ -417,62 +411,61 @@ export default function Home() {
           <div className={styles.container}>
             <h2 className={styles.title}>বিভিন্ন সংবাদ মাধ্যমে প্রকাশিত</h2>
             <div className={styles.grid}>
-              <div className={styles.card}>
-                <Image
-                  src="/images/news1.jpg"
-                  alt="News Coverage"
-                  width={350}
-                  height={250}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/news2.jpg"
-                  alt="News Coverage"
-                  width={350}
-                  height={250}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/news3.jpg"
-                  alt="News Coverage"
-                  width={350}
-                  height={250}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/news4.jpg"
-                  alt="News Coverage"
-                  width={350}
-                  height={250}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/news5.jpg"
-                  alt="News Coverage"
-                  width={350}
-                  height={250}
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.card}>
-                <Image
-                  src="/images/news6.jpg"
-                  alt="News Coverage"
-                  width={350}
-                  height={250}
-                  className={styles.image}
-                />
-              </div>
+              {newsimage.map((item, index) => (
+                <div
+                  key={index}
+                  className={styles.card}
+                  onClick={() => setSelectedImage(index)}
+                >
+                  <Image
+                    src={item.src}
+                    alt={`News Image ${index + 1}`}
+                    width={350}
+                    height={250}
+                    className={styles.image}
+                  />
+                </div>
+              ))}
             </div>
           </div>
+
+          {selectedImage !== null && newsimage[selectedImage] && (
+            <div
+              className={styles.modal}
+              onClick={() => setSelectedImage(null)}
+            >
+              <button
+                className={styles.prev}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImage((prev) =>
+                    prev > 0 ? prev - 1 : newsimage.length - 1
+                  );
+                }}
+              >
+                ❮
+              </button>
+              <div className={styles.modalContent}>
+                <Image
+                  src={newsimage[selectedImage].src}
+                  alt="News Image"
+                  width={600}
+                  height={400}
+                />
+              </div>
+              <button
+                className={styles.next}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImage((prev) =>
+                    prev < newsimage.length - 1 ? prev + 1 : 0
+                  );
+                }}
+              >
+                ❯
+              </button>
+            </div>
+          )}
         </section>
         <section className={styles.connectSection}>
           <div className={styles.container}>
