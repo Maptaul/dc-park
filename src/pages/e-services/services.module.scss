@@ -50,19 +50,16 @@
     }
 }
 
-/* ============================
-   Left Side - Ticket Info
-============================ */
+/* Left Side - Ticket Info */
 .ticketInfo {
     flex: 1;
-    // background: #fff;
     padding: 25px;
     border-radius: 10px;
-    // box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    
+    justify-content: center;
 
     h2 {
         font-size: 24px;
@@ -75,15 +72,14 @@
         color: #555;
         margin-bottom: 10px;
     }
-    img{
+
+    img {
         width: 60%;
-        height: 50%;
+        height: auto;
     }
 }
 
-/* ============================
-   Right Side - Ticket Form
-============================ */
+/* Right Side - Ticket Form */
 .ticketFormContainer {
     flex: 1;
     background: #fff;
@@ -95,6 +91,7 @@
         font-size: 22px;
         margin-bottom: 15px;
         color: #333;
+        text-align: center;
     }
 
     form {
@@ -132,3 +129,159 @@
         }
     }
 }
+
+/* ============================
+   Package Pricing Section
+============================ */
+.pricingSection {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+    text-align: center;
+  
+    h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+  
+    .pricingContainer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  
+    .pricingCard {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      }
+  
+      &:nth-child(1) {
+        .badge {
+          background: #e74c3c;
+        }
+        .priceCircle {
+          background: #e74c3c;
+        }
+        .buyBtn {
+          background: #e74c3c;
+        }
+      }
+  
+      &:nth-child(2) {
+        .badge {
+          background: #1abc9c;
+        }
+        .priceCircle {
+          background: #1abc9c;
+        }
+        .buyBtn {
+          background: #1abc9c;
+        }
+      }
+  
+      &:nth-child(3) {
+        .badge {
+          background: #f39c12;
+        }
+        .priceCircle {
+          background: #f39c12;
+        }
+        .buyBtn {
+          background: #f39c12;
+        }
+      }
+  
+      .badge {
+        position: absolute;
+        top: 20px;
+        left: -10px;
+        background: #333;
+        color: white;
+        padding: 8px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        transform: rotate(-30deg);
+      }
+  
+      .priceCircle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #333;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+        transition: transform 0.3s ease;
+      }
+  
+      &:hover .priceCircle {
+        transform: scale(1.1);
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+        text-align: left;
+  
+        li {
+          padding: 8px 0;
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+          transition: color 0.3s ease;
+  
+          &:before {
+            content: "✔";
+            color: #2ecc71;
+            margin-right: 10px;
+            font-weight: bold;
+          }
+        }
+  
+        li:nth-child(n + 3) {
+          &:before {
+            content: "✖";
+            color: #e74c3c;
+          }
+        }
+      }
+  
+      .buyBtn {
+        background: #333;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 5px;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 16px;
+        margin-top: 10px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease-in-out;
+  
+        &:hover {
+          background: darken(#333, 10%);
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  
+  
