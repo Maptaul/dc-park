@@ -460,7 +460,7 @@ export default function Home() {
                 className={styles.next}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setSelectedImage((prev) =>
+                  setSelectedImage4((prev) =>
                     prev < newsimage.length - 1 ? prev + 1 : 0
                   );
                 }}
