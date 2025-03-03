@@ -58,10 +58,10 @@ export default function Home() {
                 <h2 className="text-center">টিকেট ক্রয় করুন</h2>
                 <form>
                   <label>তারিখ</label>
-                  <input type="date" required />
+                  <input type="date" required title="তারিখ নির্বাচন করুন" />
 
-                  <label>টিকেটের ধরণ</label>
-                  <select required>
+                  <label htmlFor="ticketType">টিকেটের ধরণ</label>
+                  <select id="ticketType" required>
                     <option value="general">সাধারণ টিকেট</option>
                     <option value="vip">ভিআইপি টিকেট</option>
                   </select>
@@ -76,7 +76,12 @@ export default function Home() {
                     required
                   />
                   <label>টিকেটের মূল্য </label>
-                  <input type="text" value="50" disabled />
+                  <input
+                    type="text"
+                    value="50"
+                    disabled
+                    title="টিকেটের মূল্য"
+                  />
 
                   <label>টিকেট সংখ্যা</label>
                   <input
@@ -87,7 +92,12 @@ export default function Home() {
                   />
 
                   <label>মোট টাকার পরিমাণ</label>
-                  <input type="text" value="50" disabled />
+                  <input
+                    type="text"
+                    value="50"
+                    disabled
+                    title="মোট টাকার পরিমাণ"
+                  />
 
                   <button type="submit" className={styles.purchaseBtn}>
                     ক্রয় করুন
