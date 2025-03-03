@@ -18,6 +18,9 @@ import { FaEnvelope, FaFacebook, FaMobile } from "react-icons/fa";
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [selectedImage2, setSelectedImage2] = useState<number | null>(null);
+  const [selectedImage3, setSelectedImage3] = useState<number | null>(null);
+  const [selectedImage4, setSelectedImage4] = useState<number | null>(null);
 
   return (
     <>
@@ -166,20 +169,20 @@ export default function Home() {
           <Container>
             <h2 className={styles.heading}>পার্কের বিশেষ আকর্ষণ</h2>
             <div className={styles.grid}>
-              {images.map((item, index) => (
+              {images.map((partItem, index) => (
                 <div
                   key={index}
                   className={styles.imageContainer}
                   onClick={() => setSelectedImage(index)}
                 >
                   <Image
-                    src={item.src || ""}
-                    alt={item.text}
+                    src={partItem.src || ""}
+                    alt={partItem.text}
                     width={200}
                     height={200}
                   />
                   <div className={styles.caption}>
-                    <p>{item.text}</p>
+                    <p>{partItem.text}</p>
                   </div>
                 </div>
               ))}
@@ -284,14 +287,14 @@ export default function Home() {
             <div className={styles.container}>
               <h2 className={styles.title}>পার্কের কিছু ছবি</h2>
               <div className={styles.grid}>
-                {parkphoto.map((item, index) => (
+                {parkphoto.map((parkP, index) => (
                   <div
                     key={index}
                     className={styles.card}
-                    onClick={() => setSelectedImage(index)}
+                    onClick={() => setSelectedImage2(index)}
                   >
                     <Image
-                      src={item.src || ""}
+                      src={parkP.src || ""}
                       alt="Park Image"
                       width={300}
                       height={200}
@@ -305,16 +308,16 @@ export default function Home() {
               </a>
             </div>
 
-            {selectedImage !== null && parkphoto[selectedImage] && (
+            {selectedImage2 !== null && parkphoto[selectedImage2] && (
               <div
                 className={styles.modal}
-                onClick={() => setSelectedImage(null)}
+                onClick={() => setSelectedImage2(null)}
               >
                 <button
                   className={styles.prev}
                   onClick={(e) => {
                     e.stopPropagation();
-                    setSelectedImage((prev) =>
+                    setSelectedImage2((prev) =>
                       prev! > 0 ? prev! - 1 : parkphoto.length - 1
                     );
                   }}
@@ -323,7 +326,7 @@ export default function Home() {
                 </button>
                 <div className={styles.modalContent}>
                   <Image
-                    src={parkphoto[selectedImage].src || ""}
+                    src={parkphoto[selectedImage2].src || ""}
                     alt="photo"
                     width={600}
                     height={400}
@@ -333,7 +336,7 @@ export default function Home() {
                   className={styles.next}
                   onClick={(e) => {
                     e.stopPropagation();
-                    setSelectedImage((prev) =>
+                    setSelectedImage2((prev) =>
                       prev! < parkphoto.length - 1 ? prev! + 1 : 0
                     );
                   }}
@@ -350,14 +353,14 @@ export default function Home() {
               পার্কে আগত দর্শনার্থীদের স্মরণীয় কিছু মুহূর্ত
             </h2>
             <div className={styles.grid}>
-              {visitorImages.map((image, index) => (
+              {visitorImages.map((visitorPhoto, index) => (
                 <div
                   key={index}
                   className={styles.card}
-                  onClick={() => setSelectedImage(index)}
+                  onClick={() => setSelectedImage3(index)}
                 >
                   <Image
-                    src={image.src || ""}
+                    src={visitorPhoto.src || ""}
                     alt="Visitor Image"
                     width={200}
                     height={150}
@@ -369,16 +372,16 @@ export default function Home() {
           </div>
 
           {/* Modal Gallery */}
-          {selectedImage !== null && visitorImages[selectedImage] && (
+          {selectedImage3 !== null && visitorImages[selectedImage3] && (
             <div
               className={styles.modal}
-              onClick={() => setSelectedImage(null)}
+              onClick={() => setSelectedImage3(null)}
             >
               <button
                 className={styles.prev}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setSelectedImage((prev) =>
+                  setSelectedImage3((prev) =>
                     prev! > 0 ? prev! - 1 : visitorImages.length - 1
                   );
                 }}
@@ -387,7 +390,7 @@ export default function Home() {
               </button>
               <div className={styles.modalContent}>
                 <Image
-                  src={visitorImages[selectedImage].src || ""}
+                  src={visitorImages[selectedImage3].src || ""}
                   alt="photo"
                   width={600}
                   height={400}
@@ -397,7 +400,7 @@ export default function Home() {
                 className={styles.next}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setSelectedImage((prev) =>
+                  setSelectedImage3((prev) =>
                     prev! < visitorImages.length - 1 ? prev! + 1 : 0
                   );
                 }}
@@ -411,14 +414,14 @@ export default function Home() {
           <div className={styles.container}>
             <h2 className={styles.title}>বিভিন্ন সংবাদ মাধ্যমে প্রকাশিত</h2>
             <div className={styles.grid}>
-              {newsimage.map((item, index) => (
+              {newsimage.map((newsPhoto, index) => (
                 <div
                   key={index}
                   className={styles.card}
-                  onClick={() => setSelectedImage(index)}
+                  onClick={() => setSelectedImage4(index)}
                 >
                   <Image
-                    src={item.src}
+                    src={newsPhoto.src}
                     alt={`News Image ${index + 1}`}
                     width={350}
                     height={250}
@@ -429,16 +432,16 @@ export default function Home() {
             </div>
           </div>
 
-          {selectedImage !== null && newsimage[selectedImage] && (
+          {selectedImage4 !== null && newsimage[selectedImage4] && (
             <div
               className={styles.modal}
-              onClick={() => setSelectedImage(null)}
+              onClick={() => setSelectedImage4(null)}
             >
               <button
                 className={styles.prev}
                 onClick={(e) => {
                   e.stopPropagation();
-                  setSelectedImage((prev) =>
+                  setSelectedImage4((prev) =>
                     prev > 0 ? prev - 1 : newsimage.length - 1
                   );
                 }}
@@ -447,7 +450,7 @@ export default function Home() {
               </button>
               <div className={styles.modalContent}>
                 <Image
-                  src={newsimage[selectedImage].src}
+                  src={newsimage[selectedImage4].src}
                   alt="News Image"
                   width={600}
                   height={400}

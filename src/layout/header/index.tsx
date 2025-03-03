@@ -23,7 +23,8 @@ export default function Header() {
             <div className={styles.nav}>
               <div className={styles.logo}>
                 <h2>
-                  <Link href="/">ডিসি পার্ক, চট্টগ্রাম</Link>
+                  <Link href="/">ডিসি পার্ক, চট্টগ্রাম</Link>{" "}
+                  {/* Ignore unknown words */}
                 </h2>
               </div>
               <ul className={`${show ? styles.show : ""} ${styles.menu}`}>
@@ -32,7 +33,8 @@ export default function Header() {
                     <FaHome />
                   </Link>
                 </li>
-                {/* Dropdown Menu for "আমাদের কথা" */}
+                {/* Dropdown Menu for "আমাদের কথা" */}{" "}
+                {/* Ignore unknown words */}
                 <li
                   className={`${styles.navItem} ${styles.dropdown}`}
                   onMouseEnter={toggleDropdown}
@@ -40,7 +42,8 @@ export default function Header() {
                   onClick={toggleDropdown}
                 >
                   <span className={styles.navLink}>
-                    আমাদের কথা <FaChevronDown className={styles.dropdownIcon} />
+                    আমাদের কথা <FaChevronDown className={styles.dropdownIcon} />{" "}
+                    {/* Ignore unknown words */}
                   </span>
                   <ul
                     className={`${styles.dropdownMenu} ${
@@ -48,30 +51,35 @@ export default function Header() {
                     }`}
                   >
                     <li>
-                      <Link href="/about">আমাদের সম্পর্কে</Link>
+                      <Link href="/about">আমাদের সম্পর্কে</Link>{" "}
+                      {/* Ignore unknown words */}
                     </li>
                     <li>
-                      <Link href="/history">ইতিহাস</Link>
+                      <Link href="/history">ইতিহাস</Link>{" "}
+                      {/* Ignore unknown words */}
                     </li>
                     <li>
-                      <Link href="/future-plans">ভবিষ্যৎ পরিকল্পনা</Link>
+                      <Link href="/future-plans">ভবিষ্যৎ পরিকল্পনা</Link>{" "}
+                      {/* Ignore unknown words */}
                     </li>
                     <li>
-                      <Link href="/vip-visits">গণ্যমান্য ব্যক্তিদের আগমন</Link>
+                      <Link href="/vip-visits">গণ্যমান্য ব্যক্তিদের আগমন</Link>{" "}
+                      {/* Ignore unknown words */}
                     </li>
                     <li>
-                      <Link href="/opening-hours">খোলা থাকার সময়</Link>
+                      <Link href="/opening-hours">খোলা থাকার সময়</Link>{" "}
+                      {/* Ignore unknown words */}
                     </li>
                   </ul>
                 </li>
                 <li className={styles.navItem}>
                   <Link className={styles.navLink} href="/careers">
-                    বিশেষ আকর্ষণ
+                    বিশেষ আকর্ষণ {/* Ignore unknown words */}
                   </Link>
                 </li>
                 <li className={styles.navItem}>
                   <Link className={styles.navLink} href="#contact">
-                    নিউজ ও ইভেন্টস
+                    নিউজ ও ইভেন্টস {/* Ignore unknown words */}
                   </Link>
                 </li>
                 <li
@@ -96,7 +104,6 @@ export default function Header() {
                     </li>
                   </ul>
                 </li>
-
                 <li className={styles.navItem}>
                   <Link className={styles.navLink} href="#contact">
                     যোগাযোগ
