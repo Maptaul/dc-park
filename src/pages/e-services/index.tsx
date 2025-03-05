@@ -3,7 +3,7 @@ import styles from "./services.module.scss";
 import Head from "next/head";
 import Header from "@/layout/header";
 import { Container } from "react-bootstrap";
-import NextImage from "@/hooks/NextImage";
+// import NextImage from "@/hooks/NextImage";
 
 export default function Home() {
   return (
@@ -14,27 +14,55 @@ export default function Home() {
       <Header />
       <main className={styles.page}>
         {/* Banner Section */}
-        <section className={styles.banner}>
-          <Container>
-            <div className={styles.content}>
-              <h1>অনলাইনে টিকেট ক্রয় করুন</h1>
-              <p>
-                ডিসি পার্ক, চট্টগ্রাম এখন আরও সহজ ও দ্রুত সেবার জন্য অনলাইন
-                টিকেটিং ব্যবস্থা চালু করেছে। দর্শনার্থীরা ঘরে বসেই টিকেট কিনতে
-                পারবেন, যা সময় সাশ্রয় করবে এবং প্রবেশ সহজতর করবে। এছাড়াও, আমরা
-                বিভিন্ন আকর্ষণীয় প্যাকেজ সংযুক্ত করছি, যাতে দর্শনার্থীরা তাদের
-                পছন্দ অনুযায়ী সুবিধা নিতে পারেন।
-              </p>
-            </div>
-          </Container>
-        </section>
+        <section className={styles.banner}></section>
+        {/* Package Pricing Section */}
+        <Container>
+          <div className={styles.pageContent}>
+            <section className={styles.pricingSection}>
+              <Container>
+                <h2 className="text-center">প্যাকেজসমূহ</h2>
+                <div className={styles.pricingContainer}>
+                  <div className={styles.pricingCard}>
+                    <div className={styles.badge}>BASIC</div>
+                    <div className={styles.priceCircle}>৳199</div>
+                    <ul>
+                      <li>সাধারণ প্রবেশাধিকার</li>
+                      <li>বিনোদন জোন অ্যাক্সেস</li>
+                      <li>ফুড কুপন অন্তর্ভুক্ত নেই</li>
+                    </ul>
+                    <button className={styles.buyBtn}>ক্রয় করুন</button>
+                  </div>
 
-        {/* Ticket Purchase Section */}
-        <section className={styles.ticketSection}>
-          <Container>
-            <div className={styles.ticketContainer}>
-              {/* Left Side - Ticket Information */}
-              <div className={styles.ticketInfo}>
+                  <div className={styles.pricingCard}>
+                    <div className={styles.badge}>STANDARD</div>
+                    <div className={styles.priceCircle}>৳499</div>
+                    <ul>
+                      <li>সাধারণ ও ভিআইপি প্রবেশাধিকার</li>
+                      <li>বিনোদন ও রাইড অ্যাক্সেস</li>
+                      <li>ফুড কুপন (৳100)</li>
+                    </ul>
+                    <button className={styles.buyBtn}>ক্রয় করুন</button>
+                  </div>
+
+                  <div className={styles.pricingCard}>
+                    <div className={styles.badge}>PREMIUM</div>
+                    <div className={styles.priceCircle}>৳899</div>
+                    <ul>
+                      <li>সকল প্রবেশাধিকার</li>
+                      <li>রাইড, বিনোদন, সুইমিং পুল</li>
+                      <li>ফুড কুপন (৳200)</li>
+                    </ul>
+                    <button className={styles.buyBtn}>ক্রয় করুন</button>
+                  </div>
+                </div>
+              </Container>
+            </section>
+            {/* Ticket Purchase Section */}
+            <section className={styles.ticketSection}>
+              <Container>
+                <div className={styles.ticketContainer}>
+                  {/* Left Side - Ticket Information */}
+                  {/* <div className={styles.ticketInfo}>
                 <NextImage
                   className={styles.image}
                   src="images/logo.png"
@@ -51,102 +79,68 @@ export default function Home() {
                 <p>
                   <strong>যোগাযোগ:</strong> 01777615690
                 </p>
-              </div>
+              </div> */}
 
-              {/* Right Side - Ticket Purchase Form */}
-              <div className={styles.ticketFormContainer}>
-                <h2 className="text-center">টিকেট ক্রয় করুন</h2>
-                <form>
-                  <label>তারিখ</label>
-                  <input type="date" required title="তারিখ নির্বাচন করুন" />
+                  {/* Right Side - Ticket Purchase Form */}
+                  <div className={styles.ticketFormContainer}>
+                    <h2 className="text-center">টিকেট ক্রয় করুন</h2>
+                    <form>
+                      <label>তারিখ</label>
+                      <input type="date" required title="তারিখ নির্বাচন করুন" />
 
-                  <label htmlFor="ticketType">টিকেটের ধরণ</label>
-                  <select id="ticketType" required>
-                    <option value="general">সাধারণ টিকেট</option>
-                    <option value="vip">ভিআইপি টিকেট</option>
-                  </select>
+                      <label htmlFor="ticketType">টিকেটের ধরণ</label>
+                      <select id="ticketType" required>
+                        <option value="general">সাধারণ টিকেট</option>
+                        <option value="vip">ভিআইপি টিকেট</option>
+                      </select>
 
-                  <label>আপনার নাম</label>
-                  <input type="text" placeholder="আপনার নাম লিখুন" required />
+                      <label>আপনার নাম</label>
+                      <input
+                        type="text"
+                        placeholder="আপনার নাম লিখুন"
+                        required
+                      />
 
-                  <label>মোবাইল নাম্বার</label>
-                  <input
-                    type="tel"
-                    placeholder="মোবাইল নাম্বার লিখুন"
-                    required
-                  />
-                  <label>টিকেটের মূল্য </label>
-                  <input
-                    type="text"
-                    value="50"
-                    disabled
-                    title="টিকেটের মূল্য"
-                  />
+                      <label>মোবাইল নাম্বার</label>
+                      <input
+                        type="tel"
+                        placeholder="মোবাইল নাম্বার লিখুন"
+                        required
+                      />
+                      <label>টিকেটের মূল্য </label>
+                      <input
+                        type="text"
+                        value="50"
+                        disabled
+                        title="টিকেটের মূল্য"
+                      />
 
-                  <label>টিকেট সংখ্যা</label>
-                  <input
-                    type="number"
-                    min="1"
-                    placeholder="টিকেট সংখ্যা লিখুন"
-                    required
-                  />
+                      <label>টিকেট সংখ্যা</label>
+                      <input
+                        type="number"
+                        min="1"
+                        placeholder="টিকেট সংখ্যা লিখুন"
+                        required
+                      />
 
-                  <label>মোট টাকার পরিমাণ</label>
-                  <input
-                    type="text"
-                    value="50"
-                    disabled
-                    title="মোট টাকার পরিমাণ"
-                  />
+                      <label>মোট টাকার পরিমাণ</label>
+                      <input
+                        type="text"
+                        value="50"
+                        disabled
+                        title="মোট টাকার পরিমাণ"
+                      />
 
-                  <button type="submit" className={styles.purchaseBtn}>
-                    ক্রয় করুন
-                  </button>
-                </form>
-              </div>
-            </div>
-          </Container>
-        </section>
-        {/* Package Pricing Section */}
-        <section className={styles.pricingSection}>
-          <Container>
-            <h2 className="text-center">ডিসি পার্ক প্যাকেজসমূহ</h2>
-            <div className={styles.pricingContainer}>
-              <div className={styles.pricingCard}>
-                <div className={styles.badge}>BASIC</div>
-                <div className={styles.priceCircle}>৳199</div>
-                <ul>
-                  <li>সাধারণ প্রবেশাধিকার</li>
-                  <li>বিনোদন জোন অ্যাক্সেস</li>
-                  <li>ফুড কুপন অন্তর্ভুক্ত নেই</li>
-                </ul>
-                <button className={styles.buyBtn}>ক্রয় করুন</button>
-              </div>
-
-              <div className={styles.pricingCard}>
-                <div className={styles.badge}>STANDARD</div>
-                <div className={styles.priceCircle}>৳499</div>
-                <ul>
-                  <li>সাধারণ ও ভিআইপি প্রবেশাধিকার</li>
-                  <li>বিনোদন ও রাইড অ্যাক্সেস</li>
-                  <li>ফুড কুপন (৳100)</li>
-                </ul>
-                <button className={styles.buyBtn}>ক্রয় করুন</button>
-              </div>
-
-              <div className={styles.pricingCard}>
-                <div className={styles.badge}>PREMIUM</div>
-                <div className={styles.priceCircle}>৳899</div>
-                <ul>
-                  <li>সকল প্রবেশাধিকার</li>
-                  <li>রাইড, বিনোদন, সুইমিং পুল</li>
-                  <li>ফুড কুপন (৳200)</li>
-                </ul>
-                <button className={styles.buyBtn}>ক্রয় করুন</button>
-              </div>
-            </div>
-          </Container>
-        </section>
+                      <button type="submit" className={styles.purchaseBtn}>
+                        ক্রয় করুন
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </Container>
+            </section>
+          </div>
+        </Container>
       </main>
       <Footer />
     </>
