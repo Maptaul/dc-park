@@ -25,7 +25,7 @@ export default function Home() {
                   <div className={styles.pricingCard}>
                     <div className={styles.badge}>BASIC</div>
                     <div className={styles.priceCircle}>৳199</div>
-                    <ul>
+                    <ul className={styles.ul}>
                       <li>সাধারণ প্রবেশাধিকার</li>
                       <li>বিনোদন জোন অ্যাক্সেস</li>
                       <li>ফুড কুপন অন্তর্ভুক্ত নেই</li>
@@ -36,7 +36,7 @@ export default function Home() {
                   <div className={styles.pricingCard}>
                     <div className={styles.badge}>STANDARD</div>
                     <div className={styles.priceCircle}>৳499</div>
-                    <ul>
+                    <ul className={styles.ul}>
                       <li>সাধারণ ও ভিআইপি প্রবেশাধিকার</li>
                       <li>বিনোদন ও রাইড অ্যাক্সেস</li>
                       <li>ফুড কুপন (৳100)</li>
@@ -47,7 +47,7 @@ export default function Home() {
                   <div className={styles.pricingCard}>
                     <div className={styles.badge}>PREMIUM</div>
                     <div className={styles.priceCircle}>৳899</div>
-                    <ul>
+                    <ul className={styles.ul}>
                       <li>সকল প্রবেশাধিকার</li>
                       <li>রাইড, বিনোদন, সুইমিং পুল</li>
                       <li>ফুড কুপন (৳200)</li>
