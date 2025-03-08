@@ -27,6 +27,11 @@
         gap: 30px;
         align-items: center;
 
+        @media (max-width: 768px) { // Adjust for small screens
+          text-align: center; 
+          justify-content: center;
+      }
+
         .image {
             img {
                 border-radius: 5px;
