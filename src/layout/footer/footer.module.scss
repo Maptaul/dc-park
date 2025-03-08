@@ -123,6 +123,12 @@
             max-width: 100%;
             
         }
+        @media (max-width: 768px) { // Small screens
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+    
     }
     
 
