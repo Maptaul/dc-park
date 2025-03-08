@@ -180,6 +180,7 @@ export default function Home() {
                     alt={partItem.text}
                     width={200}
                     height={200}
+                    className={styles.image}
                   />
                   <div className={styles.caption}>
                     <p>{partItem.text}</p>
