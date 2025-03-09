@@ -244,6 +244,7 @@
     .row {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 10px;
 
 
         .wrapper {
@@ -554,13 +555,14 @@
 
   .parkGallery {
     padding: 60px 20px;
+    text-align: center;
     // background: #f8f9fa; /* Light background */
   
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
+    // .container {
+      // max-width: 1200px;
+      // margin: 0 auto;
+      
+    // }
   
     .title {
       font-size: 2.2rem;

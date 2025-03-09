@@ -46,7 +46,7 @@ export default function Home() {
         </section>
         <Notice />
         <section className={styles.welcome}>
-          <Container className={styles.container}>
+          <Container>
             <div className={styles.row}>
               <div className={styles.content}>
                 <h2>ডিসি পার্কের সংক্ষিপ্ত ইতিহাস</h2>
@@ -228,7 +228,7 @@ export default function Home() {
           </Container>
         </section>
         <section className={styles.ongoingProjects} id="projects">
-          <Container className={styles.container}>
+          <Container>
             <div className={styles.head}>
               <h2>চলমান প্রকল্প সমূহ</h2>
             </div>
@@ -285,7 +285,7 @@ export default function Home() {
 
         <section className={styles.parkGallery}>
           <Container>
-            <div className={styles.container}>
+            <div>
               <h2 className={styles.title}>পার্কের কিছু ছবি</h2>
               <div className={styles.grid}>
                 {parkphoto.map((parkP, index) => (
@@ -349,127 +349,131 @@ export default function Home() {
           </Container>
         </section>
         <section className={styles.visitorMoments}>
-          <div className={styles.container}>
-            <h2 className={styles.title}>
-              পার্কে আগত দর্শনার্থীদের স্মরণীয় কিছু মুহূর্ত
-            </h2>
-            <div className={styles.grid}>
-              {visitorImages.map((visitorPhoto, index) => (
-                <div
-                  key={index}
-                  className={styles.card}
-                  onClick={() => setSelectedImage3(index)}
+          <Container>
+            <div>
+              <h2 className={styles.title}>
+                পার্কে আগত দর্শনার্থীদের স্মরণীয় কিছু মুহূর্ত
+              </h2>
+              <div className={styles.grid}>
+                {visitorImages.map((visitorPhoto, index) => (
+                  <div
+                    key={index}
+                    className={styles.card}
+                    onClick={() => setSelectedImage3(index)}
+                  >
+                    <Image
+                      src={visitorPhoto.src || ""}
+                      alt="Visitor Image"
+                      width={200}
+                      height={150}
+                      className={styles.image}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Modal Gallery */}
+            {selectedImage3 !== null && visitorImages[selectedImage3] && (
+              <div
+                className={styles.modal}
+                onClick={() => setSelectedImage3(null)}
+              >
+                <button
+                  className={styles.prev}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage3((prev) =>
+                      prev! > 0 ? prev! - 1 : visitorImages.length - 1
+                    );
+                  }}
                 >
+                  ❮
+                </button>
+                <div className={styles.modalContent}>
                   <Image
-                    src={visitorPhoto.src || ""}
-                    alt="Visitor Image"
-                    width={200}
-                    height={150}
-                    className={styles.image}
+                    src={visitorImages[selectedImage3].src || ""}
+                    alt="photo"
+                    width={600}
+                    height={400}
                   />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Modal Gallery */}
-          {selectedImage3 !== null && visitorImages[selectedImage3] && (
-            <div
-              className={styles.modal}
-              onClick={() => setSelectedImage3(null)}
-            >
-              <button
-                className={styles.prev}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedImage3((prev) =>
-                    prev! > 0 ? prev! - 1 : visitorImages.length - 1
-                  );
-                }}
-              >
-                ❮
-              </button>
-              <div className={styles.modalContent}>
-                <Image
-                  src={visitorImages[selectedImage3].src || ""}
-                  alt="photo"
-                  width={600}
-                  height={400}
-                />
+                <button
+                  className={styles.next}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage3((prev) =>
+                      prev! < visitorImages.length - 1 ? prev! + 1 : 0
+                    );
+                  }}
+                >
+                  ❯
+                </button>
               </div>
-              <button
-                className={styles.next}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedImage3((prev) =>
-                    prev! < visitorImages.length - 1 ? prev! + 1 : 0
-                  );
-                }}
-              >
-                ❯
-              </button>
-            </div>
-          )}
+            )}
+          </Container>
         </section>
         <section className={styles.newsSection}>
-          <div className={styles.container}>
-            <h2 className={styles.title}>বিভিন্ন সংবাদ মাধ্যমে প্রকাশিত</h2>
-            <div className={styles.grid}>
-              {newsimage.map((newsPhoto, index) => (
-                <div
-                  key={index}
-                  className={styles.card}
-                  onClick={() => setSelectedImage4(index)}
+          <Container>
+            <div>
+              <h2 className={styles.title}>বিভিন্ন সংবাদ মাধ্যমে প্রকাশিত</h2>
+              <div className={styles.grid}>
+                {newsimage.map((newsPhoto, index) => (
+                  <div
+                    key={index}
+                    className={styles.card}
+                    onClick={() => setSelectedImage4(index)}
+                  >
+                    <Image
+                      src={newsPhoto.src}
+                      alt={`News Image ${index + 1}`}
+                      width={350}
+                      height={250}
+                      className={styles.image}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {selectedImage4 !== null && newsimage[selectedImage4] && (
+              <div
+                className={styles.modal}
+                onClick={() => setSelectedImage4(null)}
+              >
+                <button
+                  className={styles.prev}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage4((prev) =>
+                      prev > 0 ? prev - 1 : newsimage.length - 1
+                    );
+                  }}
                 >
+                  ❮
+                </button>
+                <div className={styles.modalContent}>
                   <Image
-                    src={newsPhoto.src}
-                    alt={`News Image ${index + 1}`}
-                    width={350}
-                    height={250}
-                    className={styles.image}
+                    src={newsimage[selectedImage4].src}
+                    alt="News Image"
+                    width={600}
+                    height={400}
                   />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {selectedImage4 !== null && newsimage[selectedImage4] && (
-            <div
-              className={styles.modal}
-              onClick={() => setSelectedImage4(null)}
-            >
-              <button
-                className={styles.prev}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedImage4((prev) =>
-                    prev > 0 ? prev - 1 : newsimage.length - 1
-                  );
-                }}
-              >
-                ❮
-              </button>
-              <div className={styles.modalContent}>
-                <Image
-                  src={newsimage[selectedImage4].src}
-                  alt="News Image"
-                  width={600}
-                  height={400}
-                />
+                <button
+                  className={styles.next}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage4((prev) =>
+                      prev < newsimage.length - 1 ? prev + 1 : 0
+                    );
+                  }}
+                >
+                  ❯
+                </button>
               </div>
-              <button
-                className={styles.next}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedImage4((prev) =>
-                    prev < newsimage.length - 1 ? prev + 1 : 0
-                  );
-                }}
-              >
-                ❯
-              </button>
-            </div>
-          )}
+            )}
+          </Container>
         </section>
         <section className={styles.connectSection}>
           <div className={styles.container}>
