@@ -476,70 +476,72 @@ export default function Home() {
           </Container>
         </section>
         <section className={styles.connectSection}>
-          <div className={styles.container}>
-            <div className={styles.grid}>
-              {/* Contact Information Section */}
-              <div className={styles.column}>
-                <h2>আমাদের সাথে যোগাযোগ করুন</h2>
-                <p>
-                  আপনার যদি কোনো প্রশ্ন থাকে বা সহায়তার প্রয়োজন হয়, তাহলে
-                  আমাদের সাথে যোগাযোগ করুন। ইমেইল বা সোশ্যাল মিডিয়ার মাধ্যমে
-                  আমাদের পৌঁছাতে পারেন।
-                </p>
+          <Container>
+            <div>
+              <div className={styles.grid}>
+                {/* Contact Information Section */}
+                <div className={styles.column}>
+                  <h2>আমাদের সাথে যোগাযোগ করুন</h2>
+                  <p>
+                    আপনার যদি কোনো প্রশ্ন থাকে বা সহায়তার প্রয়োজন হয়, তাহলে
+                    আমাদের সাথে যোগাযোগ করুন। ইমেইল বা সোশ্যাল মিডিয়ার মাধ্যমে
+                    আমাদের পৌঁছাতে পারেন।
+                  </p>
 
-                <div className={styles.contactInfo}>
-                  <div className={styles.contactCard}>
-                    <FaEnvelope className={styles.icon} />
-                    <div>
-                      <h3>ইমেইল</h3>
-                      <p>info@dcparkctg.com</p>
+                  <div className={styles.contactInfo}>
+                    <div className={styles.contactCard}>
+                      <FaEnvelope className={styles.icon} />
+                      <div>
+                        <h3>ইমেইল</h3>
+                        <p>info@dcparkctg.com</p>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className={styles.contactCard}>
-                    <FaFacebook className={styles.icon} />
-                    <div>
-                      <h3>ফেইসবুক</h3>
-                      <p>dcparkchittagong</p>
+                    <div className={styles.contactCard}>
+                      <FaFacebook className={styles.icon} />
+                      <div>
+                        <h3>ফেইসবুক</h3>
+                        <p>dcparkchittagong</p>
+                      </div>
                     </div>
-                  </div>
 
-                  <div className={styles.contactCard}>
-                    <FaMobile className={styles.icon} />
-                    <div>
-                      <h3>মোবাইল</h3>
-                      <p>+880 1745-963840</p>
+                    <div className={styles.contactCard}>
+                      <FaMobile className={styles.icon} />
+                      <div>
+                        <h3>মোবাইল</h3>
+                        <p>+880 1745-963840</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Contact Form Section */}
-              <div className={styles.column}>
-                <h2>যোগাযোগ ফর্ম</h2>
-                <form className={styles.contactForm}>
-                  <div className={styles.inputGroup}>
-                    <div>
-                      <label>পূর্ণ নাম</label>
-                      <input type="text" placeholder="আপনার নাম লিখুন" />
+                {/* Contact Form Section */}
+                <div className={styles.column}>
+                  <h2>যোগাযোগ ফর্ম</h2>
+                  <form className={styles.contactForm}>
+                    <div className={styles.inputGroup}>
+                      <div>
+                        <label>পূর্ণ নাম</label>
+                        <input type="text" placeholder="আপনার নাম লিখুন" />
+                      </div>
+                      <div>
+                        <label>ইমেইল</label>
+                        <input type="email" placeholder="আপনার ইমেইল লিখুন" />
+                      </div>
                     </div>
-                    <div>
-                      <label>ইমেইল</label>
-                      <input type="email" placeholder="আপনার ইমেইল লিখুন" />
-                    </div>
-                  </div>
 
-                  <label>ফোন নাম্বার</label>
-                  <input type="text" placeholder="আপনার ফোন নাম্বার লিখুন" />
+                    <label>ফোন নাম্বার</label>
+                    <input type="text" placeholder="আপনার ফোন নাম্বার লিখুন" />
 
-                  <label>মেসেজ</label>
-                  <textarea placeholder="আপনার বার্তা লিখুন"></textarea>
+                    <label>মেসেজ</label>
+                    <textarea placeholder="আপনার বার্তা লিখুন"></textarea>
 
-                  <button type="submit">পাঠান</button>
-                </form>
+                    <button type="submit">পাঠান</button>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
+          </Container>
         </section>
         {/* <section className={styles.getInvolved2}>
           <div className={styles.container}>
