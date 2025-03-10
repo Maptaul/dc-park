@@ -182,9 +182,9 @@ export default function Home() {
                     height={200}
                     className={styles.image}
                   />
-                  <div className={styles.caption}>
+                  {/* <div className={styles.caption}>
                     <p>{partItem.text}</p>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
